@@ -17,10 +17,10 @@ export const Sobre = () => {
 
    
     return (
-        <div id='sobre' className='flex flex-col h-screen md:justify-normal' style={{ backgroundImage: "url('/bgsobre.jpg')", backgroundRepeat: 'repeat', backgroundSize: 'cover', }}>
+        <div id='sobre' className='flex flex-col h-screen md:justify-normal overflow-hidden' style={{ backgroundImage: "url('/bgsobre.jpg')", backgroundRepeat: 'repeat', backgroundSize: 'cover', }}>
             <div className='flex flex-col mt-24 md:mt-32 mx-4 font-Oswald text-center md:m-10 md:gap-10 md:justify-between h-full m-6'>
                 <motion.div
-                    transition={{ type: 'spring', ease: "easeOut", duration: 4}}
+                    transition={{ type: 'spring', ease: "easeOut", duration: 2}}
                     initial={{y:100}}
                     whileInView={{y:0}}
                     style={{ backgroundColor: '#D9D9D9', fontSize: 15 }}
@@ -31,7 +31,7 @@ export const Sobre = () => {
                     </p>
                 </motion.div>
                 <motion.div
-                    transition={{ type: 'spring', ease: "easeOut", duration: 4}}
+                    transition={{ type: 'spring', ease: "easeOut", duration: 2}}
                     initial={{x:-100}}
                     whileInView={{x:0}}
                     
@@ -43,7 +43,7 @@ export const Sobre = () => {
                             Transformando pixels em experiências cativantes, moldando a interface do usuário, dando vida à visão digital e tornando a navegação uma jornada intuitiva e visualmente impactante.
                         </p>
                     </div>
-                    <div className='flex gap-5 mt-1 md:grid md:grid-cols-3 md:p-5'>
+                    <div className='flex gap-5 mt-1 md:grid md:grid-cols-3 md:p-5 justify-center items-center'>
                         <img src={javascript} alt="javascript" className='h-10 md:h-16' />
                         <img src={html} alt="html5" className='h-10 md:h-16' />
                         <img src={css} alt="css3" className='h-10 md:h-16' />
@@ -53,7 +53,7 @@ export const Sobre = () => {
                     </div>
                 </motion.div>
                 <motion.div
-                    transition={{ type: 'spring', ease: "easeOut", duration: 4}}
+                    transition={{ type: 'spring', ease: "easeOut", duration: 2}}
                     initial={{x:100}}
                     whileInView={{x:0}}
                     style={{ backgroundColor: '#D9D9D9' }}

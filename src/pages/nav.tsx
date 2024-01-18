@@ -5,6 +5,7 @@ import logo from '../assets/dkdev.png';
 import menu from '../assets/Frame 6.png';
 import { useState } from 'react';
 import { Link } from 'react-scroll';
+import { motion } from 'framer-motion'
 
 export const NavBar = () => {
     const [showMenu, setShowMenu] = useState(false);
@@ -75,31 +76,31 @@ export const NavBar = () => {
                     {showMenu && <div className='text-4xl sm:text-7xl' style={{ color: '#5CE1E6' }} onClick={() => setShowMenu(false)}>X</div>}
                 </nav>
                 {showMenu && <div className='w-full bg-gray-500 text-white'>
-                    <ul className='flex flex-col md:hidden text-center'>
-                        <li className='border-b sm:py-1'>
+                    <ul className='flex flex-col md:hidden text-center text-xl'>
+                        <li className='border-b sm:py-1 py-1'>
                             <Link
                                 activeClass="active"
                                 to="home"
                                 spy={true}
                                 smooth={true}
                                 duration={500}
-
+                                onClick={() => setShowMenu(false)}
                             >HOME</Link>
                         </li>
-                        <li className='border-b sm:py-1'>
+                        <li className='border-b sm:py-1 py-1'>
                             <Link
                                 activeClass="active"
                                 to="sobre"
                                 spy={true}
                                 smooth={true}
-                                offset={80}
                                 duration={500}
+                                onClick={() => setShowMenu(false)}
                             >SOBRE</Link>
                         </li>
-                        <li className='border-b sm:py-1'>
+                        <li className='border-b sm:py-1 py-1'>
                             PROJETOS
                         </li>
-                        <li className='sm:py-1'>
+                        <li className='border-b sm:py-1 py-1'>
                             <Link
                                 activeClass="active"
                                 to="test1"
@@ -107,8 +108,23 @@ export const NavBar = () => {
                                 smooth={true}
                                 offset={50}
                                 duration={500}
+                                onClick={() => setShowMenu(false)}
                             >CONTATOS</Link>
                         </li>
+                        <div className='p-2'>
+                            <h1>
+                                REDES SOCIAIS
+                            </h1>
+                            <motion.div
+                                initial={{ x: 200 }}
+                                whileInView={{ x: 0 }}
+                                transition={{ type: 'spring', ease: "easeOut", duration: 2 }}
+                                className='flex justify-center m-2 gap-10 md:hidden'>
+                                <img src={github} alt="github" width={35} />
+                                <img src={twitter} alt="twitter" width={35} />
+                                <img src={instagram} alt="instagram" width={35} />
+                            </motion.div>
+                        </div>
                     </ul>
                 </div>}
             </div>
