@@ -43,10 +43,9 @@ export const NavBar = () => {
                     <li className='hover:text-azulBase cursor-pointer'>
                         <Link
                             activeClass="active"
-                            to="test1"
+                            to="projetos"
                             spy={true}
                             smooth={true}
-                            offset={50}
                             duration={500}
                         >{!isEnglish ? 'PROJETOS' : 'PROJECTS'}</Link>
                     </li>
@@ -116,7 +115,14 @@ export const NavBar = () => {
                             >{!isEnglish ? 'SOBRE' : 'ABOUT'}</Link>
                         </li>
                         <li className='border-b sm:py-1 py-1'>
-                            {!isEnglish ? 'PROJETOS' : 'PROJECTS'}
+                            <Link
+                                activeClass="active"
+                                to="projetos"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                                onClick={() => setShowMenu(false)}
+                            >{!isEnglish ? 'PROJETOS' : 'PROJECTS'}</Link>
                         </li>
                         <li className='border-b sm:py-1 py-1'>
                             <Link
@@ -137,14 +143,14 @@ export const NavBar = () => {
                                 className='flex justify-center m-2 gap-10 md:hidden'>
                                 <div
                                     style={{ height: 35 }}
-                                    className={`flex text-center opacity-30 hover:opacity-100 rounded-full ${!isEnglish && 'opacity-100'}`}
+                                    className={`flex text-center opacity-30  rounded-full ${!isEnglish && 'opacity-100'}`}
                                     onClick={() => toggleLanguage()}
                                 >
                                     <img src={pt} alt="" width={35} color='red' />
                                 </div>
                                 <div
                                     style={{ height: 35 }}
-                                    className={`flex text-center opacity-30 hover:opacity-100 rounded-full ${isEnglish && 'opacity-100'}`}
+                                    className={`flex text-center opacity-30 rounded-full ${isEnglish && 'opacity-100'}`}
                                     onClick={() => toggleLanguage()}
                                 >
                                     <img src={us} alt="" width={35} color='red' />

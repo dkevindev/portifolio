@@ -4,6 +4,7 @@ import { NavBar } from './pages/nav';
 import { Sobre } from './pages/sobre';
 import { scroller } from 'react-scroll';
 import { LanguageProvider } from './context/Context';
+import { Projetos } from './pages/projetos';
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <NavBar />
         <Home />
         <Sobre />
+        <Projetos/>
       </div>
     </LanguageProvider>
 
