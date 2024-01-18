@@ -20,7 +20,7 @@ export const Sobre = () => {
         <div id='sobre' className='flex flex-col h-screen md:justify-normal' style={{ backgroundImage: "url('/bgsobre.jpg')", backgroundRepeat: 'repeat', backgroundSize: 'cover', }}>
             <div className='flex flex-col mt-24 md:mt-32 mx-4 font-Oswald text-center md:m-10 md:gap-10 md:justify-between h-full m-6'>
                 <motion.div
-                    transition={{ type: 'spring', bounce: '0.7', duration: 4}}
+                    transition={{ type: 'spring', ease: "easeOut", duration: 4}}
                     initial={{y:100}}
                     whileInView={{y:0}}
                     style={{ backgroundColor: '#D9D9D9', fontSize: 15 }}
@@ -31,8 +31,8 @@ export const Sobre = () => {
                     </p>
                 </motion.div>
                 <motion.div
-                    transition={{ type: 'spring', bounce:'0.5', duration: 4}}
-                    initial={{x:-200}}
+                    transition={{ type: 'spring', ease: "easeOut", duration: 4}}
+                    initial={{x:-100}}
                     whileInView={{x:0}}
                     
                     style={{ backgroundColor: '#D9D9D9', fontSize: 15 }}
@@ -53,8 +53,8 @@ export const Sobre = () => {
                     </div>
                 </motion.div>
                 <motion.div
-                    transition={{ type: 'spring', bounce:'0.5', duration: 4}}
-                    initial={{x:200}}
+                    transition={{ type: 'spring', ease: "easeOut", duration: 4}}
+                    initial={{x:100}}
                     whileInView={{x:0}}
                     style={{ backgroundColor: '#D9D9D9' }}
                     className='flex justify-center md:flex-row items-center flex-col rounded-2xl p-2 mt-8 md:mt-0 md:order-last md:self-end md:flex  md:w-1/3  md:min-w-[500px]'>
