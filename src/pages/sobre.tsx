@@ -31,8 +31,8 @@ export const Sobre = () => {
                     </p>
                 </motion.div>
                 <motion.div
-                    transition={{ type: 'spring', bounce:'0.5', duration: 7}}
-                    initial={{x:-550}}
+                    transition={{ type: 'spring', bounce:'0.5', duration: 4}}
+                    initial={{x:-200}}
                     whileInView={{x:0}}
                     
                     style={{ backgroundColor: '#D9D9D9', fontSize: 15 }}
@@ -53,8 +53,8 @@ export const Sobre = () => {
                     </div>
                 </motion.div>
                 <motion.div
-                    transition={{ type: 'spring', bounce:'0.5', duration: 7}}
-                    initial={{x:550}}
+                    transition={{ type: 'spring', bounce:'0.5', duration: 4}}
+                    initial={{x:200}}
                     whileInView={{x:0}}
                     style={{ backgroundColor: '#D9D9D9' }}
                     className='flex justify-center md:flex-row items-center flex-col rounded-2xl p-2 mt-8 md:mt-0 md:order-last md:self-end md:flex  md:w-1/3  md:min-w-[500px]'>
