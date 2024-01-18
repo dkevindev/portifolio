@@ -1,7 +1,4 @@
 import avatar from '../assets/profile-removebg-preview.png';
-import github from '../assets/github-142-svgrepo-com.svg';
-import twitter from '../assets/twitter-svgrepo-com.svg';
-import instagram from '../assets/instagram-167-svgrepo-com.svg';
 import { motion } from 'framer-motion'
 
 export const Home = () => {

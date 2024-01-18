@@ -1,5 +1,4 @@
 import { motion, useAnimation } from 'framer-motion';
-import { useEffect, useState } from 'react';
 import javascript from '../assets/javascript-svgrepo-com.svg';
 import html from '../assets/html-5-svgrepo-com.svg';
 import css from '../assets/css-3-svgrepo-com.svg';

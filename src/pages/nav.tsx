@@ -13,7 +13,7 @@ export const NavBar = () => {
 
     return (
         <>
-            <nav id='test1' className='hidden sm:hidden md:flex md:px-12 lg:px-28 py-1 bg-black h-20 justify-between fixed w-full backdrop-blur-3xl '>
+            <nav id='test1' className='hidden sm:hidden md:flex md:px-12 lg:px-28 py-1 bg-black h-20 justify-between fixed w-full backdrop-blur-3xl'>
                 <div className='flex justify-center items-center'>
                     <img src={logo} alt="DKCODE" className='h-20' />
                 </div>
@@ -69,7 +69,7 @@ export const NavBar = () => {
                     </div>
                 </div>
             </nav>
-            <div className='fixed w-full backdrop-brightness-50'>
+            <div className='fixed w-full backdrop-brightness-50' style={{zIndex: 9999}}>
                 <nav className='flex items-center px-4 justify-between md:hidden w-full' style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }} >
                     <img src={logo} alt="DKCODE" className='h-20' />
                     {!showMenu && <img src={menu} className='w-8 h-6  ' onClick={() => setShowMenu(true)} />}
