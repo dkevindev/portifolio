@@ -1,14 +1,18 @@
 import github from '../assets/github-142-svgrepo-com.svg';
 import twitter from '../assets/twitter-svgrepo-com.svg';
 import instagram from '../assets/instagram-167-svgrepo-com.svg';
+import pt from '../assets/flag-for-flag-brazil-svgrepo-com.svg';
+import us from '../assets/flag-for-flag-us-outlying-islands-svgrepo-com.svg';
 import logo from '../assets/dkdev.png';
 import menu from '../assets/Frame 6.png';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion'
+import { LanguageContext } from '../context/Context';
 
 export const NavBar = () => {
     const [showMenu, setShowMenu] = useState(false);
+    const { isEnglish, toggleLanguage } = useContext(LanguageContext);
 
 
     return (
@@ -25,7 +29,7 @@ export const NavBar = () => {
                             spy={true}
                             smooth={true}
                             duration={500}
-                        >HOME</Link>
+                        >{!isEnglish ? 'INICIO' : 'HOME'}</Link>
                     </li>
                     <li className='hover:text-azulBase cursor-pointer'>
                         <Link
@@ -34,7 +38,7 @@ export const NavBar = () => {
                             spy={true}
                             smooth={true}
                             duration={500}
-                        >SOBRE</Link>
+                        >{!isEnglish ? 'SOBRE' : 'ABOUT'}</Link>
                     </li>
                     <li className='hover:text-azulBase cursor-pointer'>
                         <Link
@@ -44,7 +48,7 @@ export const NavBar = () => {
                             smooth={true}
                             offset={50}
                             duration={500}
-                        >PROJETOS</Link>
+                        >{!isEnglish ? 'PROJETOS' : 'PROJECTS'}</Link>
                     </li>
                     <li className='hover:text-azulBase cursor-pointer'>
                         <Link
@@ -54,7 +58,7 @@ export const NavBar = () => {
                             smooth={true}
                             offset={50}
                             duration={500}
-                        >CONTATOS</Link>
+                        >{!isEnglish ? 'CONTATO' : 'CONTACT'}</Link>
                     </li>
                 </ul>
                 <div className='flex justify-center items-center gap-5 '>
@@ -67,9 +71,23 @@ export const NavBar = () => {
                     <div style={{ height: 30 }} className='flex text-center opacity-30 hover:opacity-100 rounded-full'>
                         <img src={instagram} alt="" width={30} color='red' />
                     </div>
+                    <div
+                        style={{ height: 35 }}
+                        className={`flex text-center opacity-30 hover:opacity-100 rounded-full ml-7 ${!isEnglish && 'opacity-100'}`}
+                        onClick={() => toggleLanguage()}
+                    >
+                        <img src={pt} alt="" width={35} color='red' />
+                    </div>
+                    <div
+                        style={{ height: 35 }}
+                        className={`flex text-center opacity-30 hover:opacity-100 rounded-full ${isEnglish && 'opacity-100'}`}
+                        onClick={() => toggleLanguage()}
+                    >
+                        <img src={us} alt="" width={35} color='red' />
+                    </div>
                 </div>
             </nav>
-            <div className='fixed w-full backdrop-brightness-50' style={{zIndex: 9999}}>
+            <div className='fixed w-full backdrop-brightness-50' style={{ zIndex: 9999 }}>
                 <nav className='flex items-center px-4 justify-between md:hidden w-full' style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }} >
                     <img src={logo} alt="DKCODE" className='h-20' />
                     {!showMenu && <img src={menu} className='w-8 h-6  ' onClick={() => setShowMenu(true)} />}
@@ -85,7 +103,7 @@ export const NavBar = () => {
                                 smooth={true}
                                 duration={500}
                                 onClick={() => setShowMenu(false)}
-                            >HOME</Link>
+                            >{!isEnglish ? 'INICIO' : 'HOME'}</Link>
                         </li>
                         <li className='border-b sm:py-1 py-1'>
                             <Link
@@ -95,10 +113,10 @@ export const NavBar = () => {
                                 smooth={true}
                                 duration={500}
                                 onClick={() => setShowMenu(false)}
-                            >SOBRE</Link>
+                            >{!isEnglish ? 'SOBRE' : 'ABOUT'}</Link>
                         </li>
                         <li className='border-b sm:py-1 py-1'>
-                            PROJETOS
+                            {!isEnglish ? 'PROJETOS' : 'PROJECTS'}
                         </li>
                         <li className='border-b sm:py-1 py-1'>
                             <Link
@@ -109,11 +127,33 @@ export const NavBar = () => {
                                 offset={50}
                                 duration={500}
                                 onClick={() => setShowMenu(false)}
-                            >CONTATOS</Link>
+                            >{!isEnglish ? 'CONTATO' : 'CONTACT'}</Link>
                         </li>
                         <div className='p-2'>
+                            <motion.div
+                                initial={{ x: 200 }}
+                                whileInView={{ x: 0 }}
+                                transition={{ type: 'spring', ease: "easeOut", duration: 2 }}
+                                className='flex justify-center m-2 gap-10 md:hidden'>
+                                <div
+                                    style={{ height: 35 }}
+                                    className={`flex text-center opacity-30 hover:opacity-100 rounded-full ${!isEnglish && 'opacity-100'}`}
+                                    onClick={() => toggleLanguage()}
+                                >
+                                    <img src={pt} alt="" width={35} color='red' />
+                                </div>
+                                <div
+                                    style={{ height: 35 }}
+                                    className={`flex text-center opacity-30 hover:opacity-100 rounded-full ${isEnglish && 'opacity-100'}`}
+                                    onClick={() => toggleLanguage()}
+                                >
+                                    <img src={us} alt="" width={35} color='red' />
+                                </div>
+                            </motion.div>
+                        </div>
+                        <div className='p-2'>
                             <h1>
-                                REDES SOCIAIS
+                                {!isEnglish ? 'REDES SOCIAIS' : 'SOCIAL MEDIA'}
                             </h1>
                             <motion.div
                                 initial={{ x: 200 }}
@@ -128,7 +168,6 @@ export const NavBar = () => {
                     </ul>
                 </div>}
             </div>
-
         </>
     )
 
