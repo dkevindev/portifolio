@@ -39,3 +39,7 @@ code {
     monospace;
 }
 
+.active {
+  color: #5CE1E6
+}
+

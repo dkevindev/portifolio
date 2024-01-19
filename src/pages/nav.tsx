@@ -17,7 +17,7 @@ export const NavBar = () => {
 
     return (
         <>
-            <nav id='test1' className='hidden sm:hidden md:flex md:px-12 lg:px-28 py-1 bg-black h-20 justify-between fixed w-full backdrop-blur-3xl'>
+            <nav id='test1' style={{zIndex: 99999}} className='hidden sm:hidden md:flex md:px-12 lg:px-28 py-1 bg-black h-20 justify-between fixed w-full backdrop-blur-3xl'>
                 <div className='flex justify-center items-center'>
                     <img src={logo} alt="DKCODE" className='h-20' />
                 </div>
@@ -52,10 +52,9 @@ export const NavBar = () => {
                     <li className='hover:text-azulBase cursor-pointer'>
                         <Link
                             activeClass="active"
-                            to="test1"
+                            to="contato"
                             spy={true}
                             smooth={true}
-                            offset={50}
                             duration={500}
                         >{!isEnglish ? 'CONTATO' : 'CONTACT'}</Link>
                     </li>
@@ -72,15 +71,15 @@ export const NavBar = () => {
                     </div>
                     <div
                         style={{ height: 35 }}
-                        className={`flex text-center opacity-30 hover:opacity-100 rounded-full ml-7 ${!isEnglish && 'opacity-100'}`}
-                        onClick={() => toggleLanguage()}
+                        className={`flex text-center hover:opacity-100 rounded-full ml-7 cursor-pointer ${!isEnglish ? 'opacity-100' : 'opacity-30'}`}
+                        onClick={() => toggleLanguage(false)}
                     >
                         <img src={pt} alt="" width={35} color='red' />
                     </div>
                     <div
                         style={{ height: 35 }}
-                        className={`flex text-center opacity-30 hover:opacity-100 rounded-full ${isEnglish && 'opacity-100'}`}
-                        onClick={() => toggleLanguage()}
+                        className={`flex text-center hover:opacity-100 rounded-full cursor-pointer ${isEnglish ? 'opacity-100' : 'opacity-30'}`}
+                        onClick={() => toggleLanguage(true)}
                     >
                         <img src={us} alt="" width={35} color='red' />
                     </div>
@@ -127,10 +126,9 @@ export const NavBar = () => {
                         <li className='border-b sm:py-1 py-1'>
                             <Link
                                 activeClass="active"
-                                to="test1"
+                                to="contato"
                                 spy={true}
                                 smooth={true}
-                                offset={50}
                                 duration={500}
                                 onClick={() => setShowMenu(false)}
                             >{!isEnglish ? 'CONTATO' : 'CONTACT'}</Link>
@@ -142,18 +140,18 @@ export const NavBar = () => {
                                 transition={{ type: 'spring', ease: "easeOut", duration: 2 }}
                                 className='flex justify-center m-2 gap-10 md:hidden'>
                                 <div
-                                    style={{ height: 35 }}
-                                    className={`flex text-center opacity-30  rounded-full ${!isEnglish && 'opacity-100'}`}
-                                    onClick={() => toggleLanguage()}
+                                    style={{ height: 40 }}
+                                    className={`flex text-center rounded-full ${!isEnglish ? 'opacity-100' : 'opacity-30'}`}
+                                    onClick={() => toggleLanguage(false)}
                                 >
-                                    <img src={pt} alt="" width={35} color='red' />
+                                    <img src={pt} alt="" width={40} color='red' />
                                 </div>
                                 <div
-                                    style={{ height: 35 }}
-                                    className={`flex text-center opacity-30 rounded-full ${isEnglish && 'opacity-100'}`}
-                                    onClick={() => toggleLanguage()}
+                                    style={{ height: 40 }}
+                                    className={`flex text-centerrounded-full ${isEnglish ? 'opacity-100' : 'opacity-30'}`}
+                                    onClick={() => toggleLanguage(true)}
                                 >
-                                    <img src={us} alt="" width={35} color='red' />
+                                    <img src={us} alt="" width={40} color='red' />
                                 </div>
                             </motion.div>
                         </div>

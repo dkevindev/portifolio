@@ -4,7 +4,7 @@ import { LanguageContext } from '../context/Context';
 import { useContext } from 'react';
 
 export const Home = () => {
-    const {isEnglish, toggleLanguage} = useContext(LanguageContext);
+    const {isEnglish} = useContext(LanguageContext);
 
     return (
         <>

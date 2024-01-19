@@ -2,7 +2,7 @@ import React, { createContext, useState, useContext } from 'react';
 
 interface LanguageContextType {
   isEnglish: boolean;
-  toggleLanguage: () => void;
+  toggleLanguage: (bol:boolean) => void;
 }
 
 const LanguageContext = createContext<LanguageContextType>({
@@ -13,8 +13,8 @@ const LanguageContext = createContext<LanguageContextType>({
 const LanguageProvider = ({children}: React.PropsWithChildren) => {
   const [isEnglish, setIsEnglish] = useState(false);
 
-  const toggleLanguage = () => {
-    setIsEnglish((prevLanguage) => !prevLanguage);
+  const toggleLanguage = (bol:boolean) => {
+    setIsEnglish(bol);
   };
 
   const contextValue: LanguageContextType = {

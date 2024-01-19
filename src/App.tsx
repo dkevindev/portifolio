@@ -1,10 +1,9 @@
-import { useEffect } from 'react';
 import { Home } from './pages/home';
 import { NavBar } from './pages/nav';
 import { Sobre } from './pages/sobre';
-import { scroller } from 'react-scroll';
 import { LanguageProvider } from './context/Context';
 import { Projetos } from './pages/projetos';
+import { Contato } from './pages/contatos';
 
 
 const App = () => {
@@ -17,6 +16,7 @@ const App = () => {
         <Home />
         <Sobre />
         <Projetos/>
+        <Contato/>
       </div>
     </LanguageProvider>
 
