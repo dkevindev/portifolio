@@ -4,6 +4,7 @@ import { Sobre } from './pages/sobre';
 import { LanguageProvider } from './context/Context';
 import { Projetos } from './pages/projetos';
 import { Contato } from './pages/contatos';
+import { ToastContainer } from 'react-toastify';
 
 
 const App = () => {
