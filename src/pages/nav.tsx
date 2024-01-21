@@ -10,16 +10,19 @@ import { Link } from 'react-scroll';
 import { motion } from 'framer-motion'
 import { LanguageContext } from '../context/Context';
 import { handleNavigate } from '../functions/navigate'
+import { useMediaQuery } from 'react-responsive';
+
 
 export const NavBar = () => {
     const [showMenu, setShowMenu] = useState(false);
     const { isEnglish, toggleLanguage } = useContext(LanguageContext);
+    const isLargeScreen = useMediaQuery({ minWidth: 768 });
     
 
 
     return (
         <>
-            <nav id='test1' style={{zIndex: 99999}} className='hidden sm:hidden md:flex md:px-12 lg:px-28 py-1 bg-black h-20 justify-between fixed w-full backdrop-blur-3xl'>
+            {isLargeScreen && <nav id='test1' style={{zIndex: 99999}} className='sm:hidden md:flex md:px-12 lg:px-28 py-1 bg-black h-20 justify-between fixed w-full backdrop-blur-3xl'>
                 <div className='flex justify-center items-center'>
                     <img src={logo} alt="DKCODE" className='h-20' />
                 </div>
@@ -86,15 +89,15 @@ export const NavBar = () => {
                         <img src={us} alt="" width={35} color='red' />
                     </div>
                 </div>
-            </nav>
-            <div className='fixed w-full backdrop-brightness-50' style={{ zIndex: 9999 }}>
-                <nav className='flex items-center px-4 justify-between md:hidden w-full' style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }} >
+            </nav>}
+            {!isLargeScreen && <nav className='fixed w-full backdrop-brightness-50' style={{ zIndex: 9999 }}>
+                <div className='flex items-center px-4 justify-between w-full' style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }} >
                     <img src={logo} alt="DKCODE" className='h-20' />
                     {!showMenu && <img src={menu} className='w-8 h-6' alt='menu' onClick={() => setShowMenu(true)} />}
-                    {showMenu && <div className='text-4xl sm:text-7xl' style={{ color: '#5CE1E6' }} onClick={() => setShowMenu(false)}>X</div>}
-                </nav>
+                    {showMenu && <div className='text-4xl' style={{ color: '#5CE1E6' }} onClick={() => setShowMenu(false)}>X</div>}
+                </div>
                 {showMenu && <div className='w-full bg-gray-500 text-white'>
-                    <ul className='flex flex-col md:hidden text-center text-xl'>
+                    <ul className='flex flex-col text-center text-xl'>
                         <li className='border-b sm:py-1 py-1'>
                             <Link
                                 activeClass="active"
@@ -140,7 +143,7 @@ export const NavBar = () => {
                                 initial={{ x: 200 }}
                                 whileInView={{ x: 0 }}
                                 transition={{ type: 'spring', ease: "easeOut", duration: 2 }}
-                                className='flex justify-center m-2 gap-10 md:hidden'>
+                                className='flex justify-center m-2 gap-10'>
                                 <div
                                     style={{ height: 40 }}
                                     className={`flex text-center rounded-full ${!isEnglish ? 'opacity-100' : 'opacity-30'}`}
@@ -165,7 +168,7 @@ export const NavBar = () => {
                                 initial={{ x: 200 }}
                                 whileInView={{ x: 0 }}
                                 transition={{ type: 'spring', ease: "easeOut", duration: 2 }}
-                                className='flex justify-center m-2 gap-10 md:hidden'>
+                                className='flex justify-center m-2 gap-10'>
                                 <img src={github} alt="github" width={35} className='cursor-pointer'  />
                                 <img src={twitter} alt="twitter" width={35} className='cursor-pointer'/>
                                 <img onClick={() => handleNavigate('instagram')} src={instagram} alt="instagram" width={35} className='cursor-pointer' />
@@ -173,7 +176,7 @@ export const NavBar = () => {
                         </div>
                     </ul>
                 </div>}
-            </div>
+            </nav>}
         </>
     )
 
