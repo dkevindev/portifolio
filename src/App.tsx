@@ -18,6 +18,9 @@ const App = () => {
             <Route path="/projetos" Component={Projetos} />
             <Route path="/contato" Component={Contato} />
           </Routes>
+          <Sobre/>
+          <Projetos/>
+          <Contato/>
         </div>
       </BrowserRouter>
     </LanguageProvider>

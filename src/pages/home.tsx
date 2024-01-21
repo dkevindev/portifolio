@@ -10,7 +10,7 @@ export const Home = () => {
 
     return (
         <>
-            <div className='flex flex-col justify-between min-h-screen md:justify-center overflow-hidden ' style={{ backgroundImage: "url('/89781.jpg')", backgroundRepeat: 'repeat', backgroundSize: 'cover' }}>
+            <div id='home' className='flex flex-col justify-between min-h-screen md:justify-center overflow-hidden ' style={{ backgroundImage: "url('/89781.jpg')", backgroundRepeat: 'repeat', backgroundSize: 'cover' }}>
                 <div className='flex flex-col h-full w-full justify-center items-center mt-20 fade '>
                     {!isLargeScreen && <div className='flex flex-col items-center h-full mt-16'>
                         <motion.h1 initial={{ x: -200 }}
