@@ -1,12 +1,19 @@
 import avatar from '../assets/profile-removebg-preview.png';
 import { motion } from 'framer-motion';
 import { LanguageContext } from '../context/Context';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { scroll } from '../functions/scroller'
+
 
 export const Home = () => {
     const { isEnglish } = useContext(LanguageContext);
     const isLargeScreen = useMediaQuery({ minWidth: 768 });
+    const site = window.location.pathname
+
+    useEffect(() => {
+        scroll(site)
+      }, []);
 
     return (
         <>
