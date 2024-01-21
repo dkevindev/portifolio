@@ -1,4 +1,4 @@
-import avatar from '../assets/profile-removebg-preview.png';
+import avatar from '../assets/profile.webp';
 import { motion } from 'framer-motion';
 import { LanguageContext } from '../context/Context';
 import { useContext, useEffect } from 'react';
