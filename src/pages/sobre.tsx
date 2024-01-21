@@ -22,7 +22,7 @@ export const Sobre = () => {
         <div id='sobre' className='flex flex-col md:justify-normal overflow-hidden min-h-screen' style={{ backgroundImage: "url('/bgsobre.jpg')", backgroundRepeat: 'repeat', backgroundSize: 'cover', }}>
             <div className='flex flex-col mt-24 md:mt-32 mx-4 font-Oswald text-center md:m-10 md:gap-10 md:justify-between h-full m-6'>
                 <motion.div
-                    transition={{ type: 'spring', ease: "easeOut", duration: 2}}
+                    transition={{ type: 'spring', ease: "easeOut", duration: 0.6}}
                     initial={{y:100}}
                     whileInView={{y:0}}
                     style={{ backgroundColor: '#D9D9D9', fontSize: 15 }}
@@ -34,7 +34,7 @@ export const Sobre = () => {
                     </p>
                 </motion.div>
                 <motion.div
-                    transition={{ type: 'spring', ease: "easeOut", duration: 2}}
+                    transition={{ type: 'spring', ease: "easeOut", duration: 0.6}}
                     initial={{x:-100}}
                     whileInView={{x:0}}
                     
@@ -58,7 +58,7 @@ export const Sobre = () => {
                     </div>
                 </motion.div>
                 <motion.div
-                    transition={{ type: 'spring', ease: "easeOut", duration: 2}}
+                    transition={{ type: 'spring', ease: "easeOut", duration: 0.6}}
                     initial={{x:100}}
                     whileInView={{x:0}}
                     style={{ backgroundColor: '#D9D9D9' }}
