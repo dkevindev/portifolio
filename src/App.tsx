@@ -6,10 +6,14 @@ import { LanguageProvider } from './context/Context';
 import { Projetos } from './pages/projetos';
 import { Contato } from './pages/contatos';
 import { RouteContainer } from './pages/routerContainer';
+import { loadFonts } from './functions/loadfonts';
+import { useEffect } from 'react';
 
 const App = () => {
 
-  console.log('Página atual:', window.location.pathname);
+  useEffect(() => {
+    loadFonts();
+  }, []);
 
 
   return (
