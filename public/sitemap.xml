@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <!-- Página principal -->
+   <url>
+      <loc>https://www.dkcode.com.br/</loc>
+      <lastmod>2024-01-21</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>1.0</priority>
+   </url>
+
+   <!-- Seção Sobre -->
+   <url>
+      <loc>https://www.dkcode.com.br/sobre</loc>
+      <lastmod>2024-01-21</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <!-- Seção Projetos -->
+   <url>
+      <loc>https://www.dkcode.com.br/projetos</loc>
+      <lastmod>2024-01-21</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <!-- Seção Contato -->
+   <url>
+      <loc>https://www.dkcode.com.br/contato</loc>
+      <lastmod>2024-01-21</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+</urlset>
