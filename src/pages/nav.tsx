@@ -9,10 +9,12 @@ import { useContext, useState } from 'react';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion'
 import { LanguageContext } from '../context/Context';
+import { handleNavigate } from '../functions/navigate'
 
 export const NavBar = () => {
     const [showMenu, setShowMenu] = useState(false);
     const { isEnglish, toggleLanguage } = useContext(LanguageContext);
+    
 
 
     return (
@@ -60,13 +62,13 @@ export const NavBar = () => {
                     </li>
                 </ul>
                 <div className='flex justify-center items-center gap-5 '>
-                    <div style={{ height: 30 }} className='flex text-center opacity-30 hover:opacity-100 rounded-full'>
+                    <div style={{ height: 30 }} className='flex text-center opacity-30 hover:opacity-100 rounded-full cursor-pointer'>
                         <img src={github} alt="" width={30} />
                     </div>
-                    <div style={{ height: 30 }} className='flex text-center opacity-30 hover:opacity-100 rounded-full'>
+                    <div style={{ height: 30 }} className='flex text-center opacity-30 hover:opacity-100 rounded-full cursor-pointer'>
                         <img src={twitter} alt="" width={30} />
                     </div>
-                    <div style={{ height: 30 }} className='flex text-center opacity-30 hover:opacity-100 rounded-full'>
+                    <div onClick={() => handleNavigate('instagram')} style={{ height: 30 }} className='flex text-center opacity-30 hover:opacity-100 rounded-full cursor-pointer'>
                         <img src={instagram} alt="" width={30} color='red' />
                     </div>
                     <div
@@ -88,7 +90,7 @@ export const NavBar = () => {
             <div className='fixed w-full backdrop-brightness-50' style={{ zIndex: 9999 }}>
                 <nav className='flex items-center px-4 justify-between md:hidden w-full' style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }} >
                     <img src={logo} alt="DKCODE" className='h-20' />
-                    {!showMenu && <img src={menu} className='w-8 h-6  ' onClick={() => setShowMenu(true)} />}
+                    {!showMenu && <img src={menu} className='w-8 h-6' alt='menu' onClick={() => setShowMenu(true)} />}
                     {showMenu && <div className='text-4xl sm:text-7xl' style={{ color: '#5CE1E6' }} onClick={() => setShowMenu(false)}>X</div>}
                 </nav>
                 {showMenu && <div className='w-full bg-gray-500 text-white'>
@@ -164,9 +166,9 @@ export const NavBar = () => {
                                 whileInView={{ x: 0 }}
                                 transition={{ type: 'spring', ease: "easeOut", duration: 2 }}
                                 className='flex justify-center m-2 gap-10 md:hidden'>
-                                <img src={github} alt="github" width={35} />
-                                <img src={twitter} alt="twitter" width={35} />
-                                <img src={instagram} alt="instagram" width={35} />
+                                <img src={github} alt="github" width={35} className='cursor-pointer'  />
+                                <img src={twitter} alt="twitter" width={35} className='cursor-pointer'/>
+                                <img onClick={() => handleNavigate('instagram')} src={instagram} alt="instagram" width={35} className='cursor-pointer' />
                             </motion.div>
                         </div>
                     </ul>

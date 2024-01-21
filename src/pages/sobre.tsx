@@ -1,4 +1,4 @@
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import javascript from '../assets/javascript-svgrepo-com.svg';
 import html from '../assets/html-5-svgrepo-com.svg';
 import css from '../assets/css-3-svgrepo-com.svg';
@@ -15,11 +15,11 @@ import { useContext } from 'react';
 
 
 export const Sobre = () => {
-    const {isEnglish, toggleLanguage} = useContext(LanguageContext);
+    const {isEnglish} = useContext(LanguageContext);
 
    
     return (
-        <div id='sobre' className='flex flex-col h-screen md:justify-normal overflow-hidden' style={{ backgroundImage: "url('/bgsobre.jpg')", backgroundRepeat: 'repeat', backgroundSize: 'cover', }}>
+        <div id='sobre' className='flex flex-col md:justify-normal overflow-hidden min-h-screen' style={{ backgroundImage: "url('/bgsobre.jpg')", backgroundRepeat: 'repeat', backgroundSize: 'cover', }}>
             <div className='flex flex-col mt-24 md:mt-32 mx-4 font-Oswald text-center md:m-10 md:gap-10 md:justify-between h-full m-6'>
                 <motion.div
                     transition={{ type: 'spring', ease: "easeOut", duration: 2}}

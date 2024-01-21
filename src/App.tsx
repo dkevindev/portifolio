@@ -4,7 +4,6 @@ import { Sobre } from './pages/sobre';
 import { LanguageProvider } from './context/Context';
 import { Projetos } from './pages/projetos';
 import { Contato } from './pages/contatos';
-import { ToastContainer } from 'react-toastify';
 
 
 const App = () => {
@@ -12,13 +11,13 @@ const App = () => {
 
   return (
     <LanguageProvider>
-      <div id='home' className='h-screen w-screen' >
+      <main id='home' className='h-screen w-screen' >
         <NavBar />
         <Home />
         <Sobre />
         <Projetos/>
         <Contato/>
-      </div>
+      </main>
     </LanguageProvider>
 
   )
